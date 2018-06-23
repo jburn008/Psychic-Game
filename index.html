@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Psychic Game</title>
+</head>
+
+<body>
+
+  <h1>The Psychic Game</h1>
+
+  <p>Guess what letter I'm thinking of</p>
+
+  <div class="wins">Wins: </div>
+  <br>
+  <div class="losses">Losses: </div>
+  <br>
+  <div class="guessesRemaining">Guesses Left: </div>
+  <br>
+  <div class="guessesSoFar">Your Guesses so far: </div>
+
+  <script type="text/javascript">    
+    //computer generates a random letter
+    var randomNum = Math.floor((Math.random() * 26) + 1);
+    var allLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    console.log(allLetters[randomNum]);
+    var computerchosenletter = allLetters[randomNum];
+
+
+    //with each keyup on a letter only, calculate wins
+    document.onkeyup = function (event) {
+      var userGuess = event.key
+      console.log(userGuess);
+      //if statement makes sure a userGuess is a valid letter within the array allLetters
+      if (allLetters.indexOf(userGuess) !== -1) {
+        //do if correct
+        userGuess === computerchosenletter
+        //do if incorrent
+        userGuess !== computerchosenletter
+      }
+      else {
+        alert ("Not a valid guess");
+      }
+    };
+
+
+
+    //else calculate losses
+
+    //guesses left for this game
+
+    //append letter guessed so far
+
+    //when player wins, increase the wins counter and start the game over again (w/o refreshing the page)
+
+    //When player losses, increase the losses and restart the game
+
+  </script>
+</body>
+
+</html>
